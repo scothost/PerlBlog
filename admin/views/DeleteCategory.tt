@@ -1,0 +1,35 @@
+[% USE date %]
+
+<div class="header">
+  <h2>Welcome to the DedicatedToServers Blog</h2>
+</div>
+
+<div class="row">
+  <div class="adminleftcolumn">
+      <div class="admincategory">
+      <h2>
+      [% FOREACH cat IN admin %]
+     <a href = "[% cat.ConfigName %].pl"> [% cat.ConfigValue %]</a> 
+     [% END %]
+     </h2>
+      </div>
+      
+
+  
+  <div class="card"> <center>
+<form enctype="multipart/form-data" accept-charset="UTF-8" method="post" action="DeleteCategory.pl">
+<select name = "cat">
+<option value = "none">Please choose ...</option>
+[% FOREACH category IN catlist %]
+<option value = "[% category.CatID %]">[% category.CatName %]</option>
+[% END %]
+</select>
+    <input type="submit" value="Submit">
+</form>
+
+
+
+    </div>
+     </center>
+  </div>
+ <br><br>

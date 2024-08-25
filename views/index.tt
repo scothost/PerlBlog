@@ -1,0 +1,9 @@
+  <div class="card">
+      <div class="image" ></div>
+      <p class = "PostTitle">Welcome to the DedicatedToServers Blog</p>
+      <p>&nbsp;</p>
+      [% FOREACH data IN content %]
+      <p>
+      [% data.PageContent %]</P>
+      [% END %]
+    </div>

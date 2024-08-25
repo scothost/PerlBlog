@@ -1,0 +1,45 @@
+[% USE date %]
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+<div class="header">
+  <h2>Welcome to the DedicatedToServers Blog</h2>
+</div>
+
+<div class="row">
+  <div class="adminleftcolumn">
+      <div class="admincategory">
+      <h2>
+      [% FOREACH cat IN admin %]
+     <a href = "[% cat.ConfigName %].pl"> [% cat.ConfigValue %]</a> 
+     [% END %]
+     </h2>
+      </div>
+      
+ <div class="card">
+<form enctype="multipart/form-data" accept-charset="UTF-8" method="post" action="AddPost.pl">
+Category: &nbsp;<select name = "cat" id='cat'>
+<!-- <option value = "none">Please choose ...</option> -->
+[% FOREACH category IN catlist %]
+<option value = "[% category.CatID %]">[% category.CatName %]</option>
+[% END %]
+</select>
+Title:<input type="text" name = "title" size="100"><br/><br/>
+Summary:<br/>
+<textarea name="editor2" id="editor2" rows="5" cols="80"></textarea><br/><br/>
+Content:<br/>
+<textarea name="editor1" id="editor1" rows="10" cols="80"></textarea><br/><br/>
+<script>
+    CKEDITOR.replace('editor1');
+    CKEDITOR.replace('editor2');
+</script>
+
+    <input type="submit" name = "AddPost" value="Submit" 
+    onsubmit = "if (document.getElementById('cat').value=='none') {alert('Choose a Category');return false;}">
+</form>
+   
+
+    </div>
+
+
+  </div>
+ <br><br>

@@ -1,0 +1,45 @@
+[% USE date %]
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+<div class="header">
+  <h2>Welcome to the DedicatedToServers Blog</h2>
+</div>
+
+<div class="row">
+  <div class="adminleftcolumn">
+      <div class="admincategory">
+      <h2>
+      [% FOREACH cat IN admin %]
+     <a href = "[% cat.ConfigName %].pl"> [% cat.ConfigValue %]</a> 
+     [% END %]
+     </h2>
+      </div>
+      
+ <div class="card">
+<form enctype="multipart/form-data" accept-charset="UTF-8" method="post" action="EditPost.pl">
+Category: <select name="cat">&nbsp;
+[% FOREACH category IN catlist %]
+<option value = "[% category.CatID %]">[% category.CatName %]</option>
+[% END %]
+</select>
+[% FOREACH post IN postlist %]
+<input type="hidden" name="post"  value="[% post.PostID %]">
+Title:<input type="text" name = "title" size="100" value="[% post.PostTitle %]"><br/><br/>
+Summary:<br/>
+<textarea name="editor2" id="editor2" rows="5" cols="80">[% post.PostSummary %]</textarea><br/><br/>
+Content:<br/>
+<textarea name="editor1" id="editor1" rows="10" cols="80">[% post.PostContent %]</textarea><br/><br/>
+<script>
+    CKEDITOR.replace('editor1');
+    CKEDITOR.replace('editor2');
+</script>
+[% END %]
+    <input type="submit" name = "Update" value="Update">
+</form>
+   
+
+    </div>
+
+
+  </div>
+ <br><br>

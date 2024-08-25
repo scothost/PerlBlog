@@ -1,0 +1,12 @@
+[% FOREACH post IN posts %]  
+  <div class="card">
+      <p align="center"><a onClick="return ToggleContent('PostContent',[% post.PostID %])">...More|Less</a></p>
+       <p class="PostOwner" align="right">[% post.UserName %] ([% post.UserRole %]) 
+      &nbsp; - &nbsp;  [% post.PostDate %] [% date.format(post.PostDate, '%y-%m-%d', 'en_GB') %]</p>
+      <img src="./images/[% post.UserImage %]" width="120" height="120" align="right" valign="middle"><br/><br/>
+      <p class = "PostTitle">[% post.PostTitle %]</p>
+      <p class = "PostSummary">[% post.PostSummary %]</p>
+     <span class = "PostContent" id = "PostContent[% post.PostID %]">[% post.PostContent %]</span> 
+     <p>&nbsp;<br/><br/><br/></p>
+    </div>
+[% END %]

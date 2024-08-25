@@ -1,0 +1,107 @@
+
+<div class="header">
+  <img src="images/logo.png" align="center"> 
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+      <div class="category">
+      <h2>
+      <a href = "./">Home</a> 
+      [% FOREACH cat IN categories %]
+     <a href = "[% cat.CatLink %]&id=[% cat.CatID %]"> [% cat.CatName %]</a> 
+     [% END %]
+     </h2>
+      </div>
+[% $mypage = 'views/' _ page _ '.tt' %]   
+    [% IF page == "index" %]
+        [% INCLUDE "views/index.tt" %]
+    [% ELSIF page == "PostList" %]
+        [% INCLUDE "views/PostList.tt" %]
+    [% ELSIF page == "Post" %]
+        [% INCLUDE "views/Post.tt" %]
+[% END %]
+
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h3>About Me</h3>
+      <div class="myimg" >&nbsp;</div>
+      <p align="center"><strong>Who am I?</strong> <br/>
+[% FOREACH who IN whoami %]
+     <p>[% who.PageContent %]</p>
+[% END %]
+
+</p>
+    </div>
+    <div class="card">
+      <h3>Popular Posts</h3>
+      [% FOREACH toppost IN top3 %]
+      <div class="toppostcategory">
+   
+      <img src = "images/[% toppost.UserImage %]" width="40" height = "40" align = "middle">
+      <a href="Post.pl?pid=[% toppost.PostID %]">[% toppost.PostTitle %]</a>
+      
+      </div><br>
+      [% END %]
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p><img src="./images/server.jpg"  width="100%" height="10%"><br/><br/>
+
+<p align="center"><a target = "_new" href="https://www.linkedin.com/in/forgeserversolutions">
+<img src="./images/linkedin.png" width="200" border="0">
+</a>
+<p> <br/>
+
+</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>
+  <p  align=center><b>Website hosting and design by Dedicated to Servers, contact <a href=mailto:info@dedicatedtoservers.com?subject=Website&nbsp;Inquiry>info@dedicatedtoservers.com</a><br>
+ </p><script>
+function toggle(el)
+{
+myDisplay = el.style.display;
+
+
+  if (myDisplay == 'none')
+  {
+     el.style.display = 'block';
+  }
+   else   {
+              el.style.display = 'none';
+     }    
+ return false;
+}
+</script><p  align=center>
+<a onClick="return toggle(document.getElementById('contactForm'));" href='' >Click to send a quick inquiry</a>
+</p>
+
+
+</p><p align=center>  All rights Reserved &copy 2014-2024</p>
+  </h2>
+</div>
+
+<script>
+function ToggleContent(el,id)
+{
+    disp = document.getElementById("PostContent"+id).style.display;
+    document.querySelectorAll(".PostContent").forEach(a=>a.style.display = "none");
+
+ if (disp == 'block')
+    {
+        document.getElementById("PostContent"+id).style.display = 'none';
+    }
+    if (disp == 'none' || disp == '')
+    {
+        document.getElementById("PostContent"+id).style.display = 'block';
+    }
+        
+
+
+}
+</script>

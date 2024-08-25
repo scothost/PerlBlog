@@ -1,0 +1,10 @@
+[% FOREACH post IN post %]  
+  <div class="card">
+      <p class="PostOwner" align="right">[% post.UserName %] ([% post.UserRole %]) 
+      &nbsp; - &nbsp;  [% post.PostDate %] [% date.format(post.PostDate, '%y-%m-%d', 'en_GB') %]</p>
+      <img src="./images/[% post.UserImage %]" width="120" height="120" align="right" valign="middle"><br/><br/>
+      <p class = "PostTitle">[% post.PostTitle %]</p>
+     <span>[% post.PostContent %]</span> 
+     <p>&nbsp;<br/><br/><br/></p>
+    </div>
+[% END %]
