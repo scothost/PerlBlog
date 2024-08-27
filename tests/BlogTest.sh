@@ -1,7 +1,7 @@
 #!/bin/bash
 
-RES=$(/bin/perl /var/www/html/perl/tests/BlogTest.pm | cut -c1) 
-cat /var/www/html/perl/x
+RES=$(/bin/perl ./BlogTest.pm | cut -c1) 
+
 if [ $RES == 0 ]; then
    exit 0
 fi
