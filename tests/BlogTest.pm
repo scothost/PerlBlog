@@ -14,17 +14,20 @@ use Test::More qw( no_plan ); # for the is() and isnt() functions
 
 my $d2s = DedicatedToServers->new();
 my ($Cats,@arrRtn) = $d2s->GetCategories();
-my $driver = "mysql"; 
-my $database = "BlogSite";
-my $dsn = "DBI:$driver:database=$database";
-my $userid = "peter";
-my $password = "mthpcl";
-
-my $dbh = DBI->connect($dsn, $userid, $password ) or die $DBI::errstr;
+my $dsn = 'DBI:mysql:' .
+          ';mysql_read_default_group=local' .
+          ';mysql_read_default_file=/etc/.mysqloptions';
+          my $dbh = DBI->connect($dsn, undef, undef, {
+    PrintError => 0,
+    RaiseError => 1
+});
 
   my $sth = $dbh->prepare("SELECT CatID, CatName, CatLink FROM Categories");
     $sth->execute() or die $DBI::errstr;
     my $results = $sth->fetchall_arrayref({});
+  
+
+  #print Dumper($results);
     $sth->execute() or die $DBI::errstr;
     my $i=0;
 

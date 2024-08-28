@@ -16,7 +16,7 @@ print "<body>\n";
 
 my $template = Template->new();
 my $d2s = DedicatedToServers->new(); 
-my $Cats = $d2s->GetCategories();
+my ($Cats,@arrRtn) = $d2s->GetCategories();
 my $Users = $d2s->GetUsers();
 my $req = new CGI; 
 my $ActivePost = $req->param("pid");

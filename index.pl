@@ -28,7 +28,8 @@ my $vars = {
     page => "index",
 };
 
-#print Dumper($vars);
+#print ${ $Cats->{categories} };
+
 $template->process('views/Layout.tt', $vars);
     
 print "</body></html>";
