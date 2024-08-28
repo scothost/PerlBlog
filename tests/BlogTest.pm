@@ -60,7 +60,7 @@ foreach (@arrRtn)
 } 
 if ($error == 0) {
 
-  system("/home/peter/deploy.sh");
+#  system("/home/peter/deploy.sh");
 
 }
 
