@@ -28,7 +28,7 @@ my $dsn = 'DBI:mysql:' .
 
     my @resArr = @{$results};   
     $sth->finish();
-    my $error = 0;
+    my $error = 1;
 
   for my $rec (@resArr)
     {
