@@ -32,10 +32,6 @@ my $dsn = 'DBI:mysql:' .
 
   for my $rec (@resArr)
     {
-      print 
-                $rec->{'CatID'} . "\r\n" .
-                $rec->{'CatName'} . "\r\n" .
-                $rec->{'CatLink'} . "\r\n\r\n";
   if ($rec->{'CatID'} < 1 || $rec->{'CatID'} eq "") {
         $error = 1;
         
