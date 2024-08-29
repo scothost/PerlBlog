@@ -1,7 +1,7 @@
 package BlogTest;
 
 
-use Templatei;
+use Template;
 use DBI;
 use base qw(Test::Unit::TestCase);
 use DedicatedToServers;
