@@ -41,8 +41,9 @@ my $vars = {
    users => $Users,
    catlist => $CatList,
    postlist => $PostList,
+};
 
 $template->process('EditPost.tt', $vars);
-}
+
     
 print "</body></html>";
