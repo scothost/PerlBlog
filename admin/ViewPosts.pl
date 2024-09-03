@@ -43,7 +43,7 @@ my $vars = {
    postlist => $PostList,
 };
 
-$template->process('EditPost.tt', $vars);
+$template->process('ViewPosts.tt', $vars);
 
     
 print "</body></html>";
