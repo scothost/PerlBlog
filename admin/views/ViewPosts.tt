@@ -1,0 +1,27 @@
+[% USE date %]
+
+<div class="header">
+  <h2>Welcome to the DedicatedToServers Blog</h2>
+</div>
+
+<div class="row">
+  <div class="adminleftcolumn">
+      <div class="admincategory">
+      <h2>
+      [% FOREACH cat IN admin %]
+     <a href = "[% cat.ConfigName %].pl"> [% cat.ConfigValue %]</a> 
+     [% END %]
+     </h2>
+      </div>
+      
+ <div class="card">
+[% FOREACH post IN postlist %]
+[% post.PostTitle %]<br/>
+[% END %]
+
+
+    </div>
+
+
+  </div>
+ <br><br>
