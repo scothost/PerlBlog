@@ -42,5 +42,5 @@ my $dsn = 'DBI:mysql:' .
     }
 
   # print "ERR $error\r\n";
-
-print  $error;
+print $error;
+exit 0;
