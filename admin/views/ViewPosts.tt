@@ -15,8 +15,14 @@
       </div>
       
  <div class="card">
+ <table border="0">
+<tr><th>Post</th><th colspan="3">Action</th></tr>
 [% FOREACH post IN postlist %]
-[% post.PostTitle %]<br/>
+<tr>
+   <td>[% post.PostTitle %]</td>
+   <td><a href="./EditPost.pl?PostID=[% post.PostID %]">Edit</td>
+   <td><a href="./DeletePost.pl?PostID=[% post.PostID %]">Delete</td>
+    <td><a href="./AddPost.pl">+</td>
 [% END %]
 
 
