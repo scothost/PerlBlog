@@ -34,7 +34,7 @@ my $dsn = 'DBI:mysql:' .
     my $error = 0;
     my $rows = $sth->rows;
    
-  if  (!$rows) {
+  if  ($rows) {
         $error = 1;
        
         exit 1;
