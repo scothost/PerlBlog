@@ -1,13 +1,10 @@
 #!/bin/bash
 
 RES=$(/bin/perl ./BlogTest.pm | cut -c1) 
+ERR=1
 
 if [ $RES == 0 ]; then
-   exit 0
+   $ERR = 0;
 fi
-
-if [ $RES == 1 ]; then
-  exit 1
-fi
-
-exit 1
+#echo $RES
+exit $RES

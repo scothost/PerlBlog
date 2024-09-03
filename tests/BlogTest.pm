@@ -10,6 +10,8 @@ use diagnostics; # this gives you more debugging information
 use warnings;    # this warns you of bad practices
 use strict;      # this prevents silly errors
 use Test::More qw( no_plan ); # for the is() and isnt() functions
+use String::Util qw(trim);
+
 
 my $d2s = DedicatedToServers->new();
 my ($Cats,@arrRtn) = $d2s->GetCategories();
@@ -23,27 +25,22 @@ my $dsn = 'DBI:mysql:' .
 
   my $sth = $dbh->prepare("SELECT CatID, CatName, CatLink FROM Categories");
     $sth->execute() or die $DBI::errstr;
+    
     my $results = $sth->fetchall_arrayref({});
   
 
     my @resArr = @{$results};   
     $sth->finish();
-    my $error = 1;
-
-  for my $rec (@resArr)
-    {
-  if ($rec->{'CatID'} < 1 || $rec->{'CatID'} eq "") {
+    my $error = 0;
+    my $rows = $sth->rows;
+   
+  if  (!$rows) {
         $error = 1;
-        
-        #exit $error;
-       # die ("Test Failed");
+       
+        exit ($error);
     
     }
-    else {
-        $error = 0;
-    }
-  } 
 
+  # print "ERR $error\r\n";
 
 exit $error;
-
