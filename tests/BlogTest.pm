@@ -37,10 +37,10 @@ my $dsn = 'DBI:mysql:' .
   if  (!$rows) {
         $error = 1;
        
-        exit ($error);
+        #exit ($error);
     
     }
 
   # print "ERR $error\r\n";
 
-exit $error;
+print  $error;
