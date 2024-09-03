@@ -23,7 +23,7 @@ my $dsn = 'DBI:mysql:' .
     RaiseError => 1
 });
 
-  my $sth = $dbh->prepare("SELECT CatID, CatName, CatLink FROM Categories where 1=2");
+  my $sth = $dbh->prepare("SELECT CatID, CatName, CatLink FROM Categories");
     $sth->execute() or die $DBI::errstr;
     
     my $results = $sth->fetchall_arrayref({});
