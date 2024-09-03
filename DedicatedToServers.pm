@@ -145,7 +145,7 @@ sub DeletePost()
     DELETE FROM Posts WHERE PostID = '$cat'
     ");
     $sth->execute() or die $DBI::errstr;
-    print "<script>location.href='/ViewPosts.pl' </script>";
+    print "<script>location.href='./ViewPosts.pl' </script>";
     $sth->finish();
 }
 

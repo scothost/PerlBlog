@@ -20,7 +20,7 @@
 [% FOREACH post IN postlist %]
 <tr>
    <td>[% post.PostTitle %]</td>
-   <td><a href="./EditPost.pl?PostID=[% post.PostID %]">Edit</td>
+   <td><a href="./EditPost.pl?post=[% post.PostID %]">Edit</td>
    <td><a href="./DeletePost.pl?post=[% post.PostID %]">Delete</td>
     <td><a href="./AddPost.pl">+</td>
 [% END %]
