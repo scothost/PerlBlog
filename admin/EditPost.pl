@@ -6,6 +6,7 @@ use Template;
 use CGI;
 use DedicatedToServers;
 use Data::Dumper;
+use Scalar::MoreUtils qw(empty);
 use CGI::Carp; # send errors to the browser, not to the logfile
 use CGI;
 
@@ -71,7 +72,7 @@ if ($req->param('Update') eq 'Update') {
     
 }
 
-if ($SubmittedForm eq "Submit")
+if ($SubmittedForm eq "Submit" || not Empty($ActivePost))
 {
   $Post = $d2s->GetPost($ActivePost);
 
