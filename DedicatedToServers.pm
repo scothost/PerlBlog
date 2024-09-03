@@ -145,7 +145,7 @@ sub DeletePost()
     DELETE FROM Posts WHERE PostID = '$cat'
     ");
     $sth->execute() or die $DBI::errstr;
-    print "Record deleted <a href='./DeletePost.pl'>Click to refresh</a>";
+    print "<script>location.href='/ViewPosts.pl' </script>";
     $sth->finish();
 }
 
