@@ -37,7 +37,7 @@ my $dsn = 'DBI:mysql:' .
   if  (!$rows) {
         $error = 1;
        
-        #exit ($error);
+        exit 1;
     
     }
 
