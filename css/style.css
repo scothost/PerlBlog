@@ -68,6 +68,7 @@ body {
   background: #b4efdc;
   color: rgb(255, 255, 255);
 }
+/*
 .card table tr td {
   background:#e0e0e0;
   border-left: black solid 1px;
@@ -75,6 +76,9 @@ body {
   border-top: black solid 1px;
   border-bottom: black solid 1px;
 }
+*/
+table { border-collapse: collapse; }
+tr:nth-child(3) { border: solid thin; }
 .PostListContent p { 
   font-size: 16px;
 }
