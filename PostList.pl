@@ -6,6 +6,7 @@ use Template;
 use CGI;
 use DedicatedToServers;
 use Blog;
+use User;
 use Data::Dumper;
 
 print "Content-type:text/html\n\n";
@@ -17,8 +18,9 @@ print "<body>\n";
 
 my $template = Template->new();
 my $Blog = Blog->new(); 
+my $User = User->new();
 my $Cats = $Blog->GetCategories();
-my $Users = $Blog->GetUsers();
+my $Users = $User->GetUsers();
 my $req = new CGI; 
 my $ActiveCategory = $req->param("id");
 my $Posts = $Blog->GetPostsByCategory($ActiveCategory);
