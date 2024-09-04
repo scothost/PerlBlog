@@ -6,9 +6,6 @@ use warnings;
 use DBI;
 use Data::Dumper;
 
-
-
-
 sub new 
 { 
     my $class = shift; # defining shift in $myclass 
@@ -28,16 +25,6 @@ my $dbh = DBI->connect($dsn, undef, undef, {
     RaiseError => 1
 });
 return $dbh;
-}
-
-sub GetUsers {
-    my $sth = $dbh->prepare("SELECT * FROM Users");
-    $sth->execute() or die $DBI::errstr;
-    my $results = $sth->fetchall_arrayref({});
-      
-$sth->finish();
-return($results);
-
 }
 
 sub GetCAdminItems()
