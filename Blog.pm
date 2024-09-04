@@ -1,5 +1,5 @@
 package Blog;
-use Base 'DedicatedToServers';
+use base 'DedicatedToServers';
 
 sub new {
     my $class = shift;
