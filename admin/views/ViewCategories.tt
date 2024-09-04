@@ -15,7 +15,7 @@
       </div>
       
  <div class="card">
- <table  width="50%" align="center">
+ <table  width="40%" align="center">
 <tr><th width=70% align="left">Post</th><th colspan="2">Action</th></tr>
 [% FOREACH cat IN catlist %]
 <tr>
