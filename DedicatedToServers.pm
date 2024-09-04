@@ -16,6 +16,8 @@ sub new
     return bless $self, $class; 
 } 
 
+our $dbh=DbConnect();
+
 sub DbConnect {
 my $dsn = 'DBI:mysql:' .
           ';mysql_read_default_group=local' .
