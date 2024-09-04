@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use Template;
-use DedicatedToServers;
+use Blog;
 use Data::Dumper;
 
 print "Content-type:text/html\n\n";
@@ -14,11 +14,11 @@ print "</head>\n\n";
 print "<body>\n";
 
 my $template = Template->new();
-my $d2s = DedicatedToServers->new(); 
-my $Cats = $d2s->GetCategories();
-my $Content = $d2s->GetIndex();
-my $Top3    = $d2s->GetTop3Posts();
-my $WhoAmI  = $d2s->WhoAmI();
+my $Blog = DedicatedToServers->new(); 
+my $Cats = $Blog->GetCategories();
+my $Content = $Blog->GetIndex();
+my $Top3    = $Blog->GetTop3Posts();
+my $WhoAmI  = $Blog->WhoAmI();
 
 my $vars = {
     categories => $Cats,
