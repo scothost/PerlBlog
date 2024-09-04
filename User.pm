@@ -1,4 +1,4 @@
-package Blog;
+package User;
 use DBI;
 use Data::Dumper;
 use Moose;
