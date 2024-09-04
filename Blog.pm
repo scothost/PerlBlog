@@ -1,6 +1,6 @@
 package Blog;
 use base 'DedicatedToServers';
-
+our @ISA = qw(DedicatedToServers); 
 
 
 sub new {
