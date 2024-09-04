@@ -99,18 +99,6 @@ sub AddNewCategory {
     print "<script>location.href='./ViewCategories.pl' </script>";
     $sth->finish();
 }
-
-sub GetCAdminItems()
-{
-     my $sth = $dbh->prepare("
-    SELECT * FROM Config"
-    );
-    $sth->execute() or die $DBI::errstr;
-    my $results = $sth->fetchall_arrayref({});
-    $sth->finish();
-    return($results);        
-}
-
 sub DeleteCategory()
 {
     my $cat = $_[1];
