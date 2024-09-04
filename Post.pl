@@ -5,6 +5,7 @@ use warnings;
 use Template;
 use CGI;
 use DedicatedToServers;
+use Blog;
 use Data::Dumper;
 
 print "Content-type:text/html\n\n";
@@ -15,7 +16,7 @@ print "</head>\n\n";
 print "<body>\n";
 
 my $template = Template->new();
-my $d2s = DedicatedToServers->new(); 
+my $d2s = Blog->new(); 
 my ($Cats,@arrRtn) = $d2s->GetCategories();
 my $Users = $d2s->GetUsers();
 my $req = new CGI; 
