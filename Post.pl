@@ -20,7 +20,7 @@ print "<body>\n";
 my $template = Template->new();
 my $Blog = Blog->new();
 my $User = User->new(); 
-my $Posts = Post-new();
+my $Posts = Post->new();
 my ($Cats,@arrRtn) = $Blog->GetCategories();
 my $Users = $User->GetUsers();
 my $req = new CGI; 
