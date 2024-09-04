@@ -27,3 +27,4 @@ my $dbh = DBI->connect($dsn, undef, undef, {
 });
 return $dbh;
 }
+1;
