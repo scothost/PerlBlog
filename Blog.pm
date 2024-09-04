@@ -25,14 +25,7 @@ return($results);
 $sth->finish();
 }
 
-sub GetUsers {
-    my $sth = $dbh->prepare("SELECT * FROM Users");
-    $sth->execute() or die $DBI::errstr;
-    my $results = $sth->fetchall_arrayref({});
-      
-$sth->finish();
-return($results);
-}
+
 
 sub GetIndex() {
     my $sth = $dbh->prepare("
