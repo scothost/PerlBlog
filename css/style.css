@@ -77,7 +77,11 @@ body {
   border-bottom: black solid 1px;
 }
 */
-table { border-collapse: collapse; }
+table { 
+  border-collapse: collapse;
+  background:#e0e0e0;
+ }
+ 
 tr { border: solid thin; }
 
 .PostListContent p { 
