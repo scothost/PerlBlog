@@ -5,6 +5,7 @@ use warnings;
 use Template;
 use DedicatedToServers;
 use Blog;
+use Post;
 use Data::Dumper;
 
 print "Content-type:text/html\n\n";
@@ -16,9 +17,10 @@ print "<body>\n";
 
 my $template = Template->new();
 my $Blog = Blog->new();  
+my $Posts = Post->new();
 my $Cats = $Blog->GetCategories();
 my $Content = $Blog->GetIndex();
-my $Top3    = $Blog->GetTop3Posts();
+my $Top3    = $Posts->GetTop3Posts();
 my $WhoAmI  = $Blog->WhoAmI();
 
 my $vars = {
