@@ -20,8 +20,8 @@
 [% FOREACH post IN postlist %]
 <tr>
    <td>[% post.PostTitle %]</td>
-   <td><a href="./EditPost.pl?post=[% post.PostID %]">Edit</td>
-   <td><a href="./DeletePost.pl?post=[% post.PostID %]">Delete</td>
+   <td><a href="./EditPost.pl?post=[% post.PostID %]"><img src="../images/edit.png" border="0"></td>
+   <td><a href="./DeletePost.pl?post=[% post.PostID %]"><img src="../images/delete.png" border="0"></td>
     <td><a href="./AddPost.pl">+</td>
 [% END %]
 
