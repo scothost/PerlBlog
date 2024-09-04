@@ -78,7 +78,8 @@ body {
 }
 */
 table { border-collapse: collapse; }
-tr:nth-child(3) { border: solid thin; }
+tr { border: solid thin; }
+
 .PostListContent p { 
   font-size: 16px;
 }
