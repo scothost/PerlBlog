@@ -1,10 +1,12 @@
 package Blog;
 use base 'DedicatedToServers';
 
+
+
 sub new {
     my $class = shift;
-    my $self = $class->SUPER::new(@_);
-    $self->{major} = shift;
+    my $self = $class->SUPER::new; # attrs inherited from Employee
+    $self->{extended} = 1;
     return $self;
 }
 

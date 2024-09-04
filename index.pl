@@ -14,7 +14,7 @@ print "</head>\n\n";
 print "<body>\n";
 
 my $template = Template->new();
-my $Blog = DedicatedToServers->new(); 
+my $Blog = Blog->new(); 
 my $Cats = $Blog->GetCategories();
 my $Content = $Blog->GetIndex();
 my $Top3    = $Blog->GetTop3Posts();
