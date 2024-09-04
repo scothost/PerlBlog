@@ -7,9 +7,9 @@
 <div class="row">
   <div class="adminleftcolumn">
       <div class="admincategory">
-      <h2>
+      <h2>|
       [% FOREACH cat IN admin %]
-     <a href = "[% cat.ConfigName %].pl"> [% cat.ConfigValue %]</a> 
+     <a href = "[% cat.ConfigName %].pl"> [% cat.ConfigValue %]</a> |
      [% END %]
      </h2>
       </div>
