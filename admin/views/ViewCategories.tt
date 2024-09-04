@@ -1,0 +1,33 @@
+[% USE date %]
+
+<div class="header">
+  <h2>Welcome to the DedicatedToServers Blog</h2>
+</div>
+
+<div class="row">
+  <div class="adminleftcolumn">
+      <div class="admincategory">
+      <h2>
+      [% FOREACH cat IN admin %]
+     <a href = "[% cat.ConfigName %].pl"> [% cat.ConfigValue %]</a> 
+     [% END %]
+     </h2>
+      </div>
+      
+ <div class="card">
+ <table  width="50%" align="center">
+<tr><th width=70% align="left">Post</th><th colspan="3">Action</th></tr>
+[% FOREACH cat IN catlist %]
+<tr>
+   <td>[% cat.CatName %]</td>
+   <td><a href="./EditCategory.pl?id=[% cat.CatID %]"><img src="../images/edit.png" border="0" width="25"  height="25"  alt-"Edit"></td>
+   <td><a href="./DeleteCategory.pl?post=[% cat.CatID %]"><img src="../images/delete.png" border="0" width="25"  height="25" ald="Delete"></td>
+    <td><a href="./AddCategory.pl"><img src="../images/add.png" border="0" width="25"  height="25" alt="Add"></td>
+[% END %]
+
+
+    </div>
+
+
+  </div>
+ <br><br>
