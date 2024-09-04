@@ -15,11 +15,11 @@ print "</head>\n\n";
 print "<body>\n";
 
 my $template = Template->new();
-my $d2s = Blog->new(); 
-my $Cats = $d2s->GetCategories();
-my $Content = $d2s->GetIndex();
-my $Top3    = $d2s->GetTop3Posts();
-my $WhoAmI  = $d2s->WhoAmI();
+my $Blog = Blog->new(); 
+my $Cats = $Blog->GetCategories();
+my $Content = $Blog->GetIndex();
+my $Top3    = $Blog->GetTop3Posts();
+my $WhoAmI  = $Blog->WhoAmI();
 
 my $vars = {
     categories => $Cats,

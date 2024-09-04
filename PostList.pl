@@ -16,14 +16,14 @@ print "</head>\n\n";
 print "<body>\n";
 
 my $template = Template->new();
-my $d2s = Blog->new(); 
-my $Cats = $d2s->GetCategories();
-my $Users = $d2s->GetUsers();
+my $Blog = Blog->new(); 
+my $Cats = $Blog->GetCategories();
+my $Users = $Blog->GetUsers();
 my $req = new CGI; 
 my $ActiveCategory = $req->param("id");
-my $Posts = $d2s->GetPostsByCategory($ActiveCategory);
-my $Top3    = $d2s->GetTop3Posts();
-my $WhoAmI  = $d2s->WhoAmI();
+my $Posts = $Blog->GetPostsByCategory($ActiveCategory);
+my $Top3    = $Blog->GetTop3Posts();
+my $WhoAmI  = $Blog->WhoAmI();
 
 
 
