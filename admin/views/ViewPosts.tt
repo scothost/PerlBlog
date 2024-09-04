@@ -15,7 +15,7 @@
       </div>
       
  <div class="card">
- <table border="1" width="50%" align="center">
+ <table  width="50%" align="center">
 <tr><th width=70% align="left">Post</th><th colspan="3">Action</th></tr>
 [% FOREACH post IN postlist %]
 <tr>
