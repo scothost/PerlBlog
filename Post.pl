@@ -18,9 +18,9 @@ print "<body>\n";
 
 my $template = Template->new();
 my $Blog = Blog->new();
-my $Users = Users->new(); 
+my $User = Users->new(); 
 my ($Cats,@arrRtn) = $Blog->GetCategories();
-my $Users = $Users->GetUsers();
+my $Users = $User->GetUsers();
 my $req = new CGI; 
 my $ActivePost = $req->param("pid");
 my $Post = $Blog->GetPost($ActivePost);
