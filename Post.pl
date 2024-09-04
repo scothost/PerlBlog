@@ -8,6 +8,7 @@ use DedicatedToServers;
 use Blog;
 use User;
 use Post;
+use Category;
 use Data::Dumper;
 
 print "Content-type:text/html\n\n";
@@ -21,7 +22,8 @@ my $template = Template->new();
 my $Blog = Blog->new();
 my $User = User->new(); 
 my $Posts = Post->new();
-my ($Cats,@arrRtn) = $Blog->GetCategories();
+my $Category = Category->new();
+my ($Cats,@arrRtn) = $Category->GetCategories();
 my $Users = $User->GetUsers();
 my $req = new CGI; 
 my $ActivePost = $req->param("pid");
