@@ -7,14 +7,7 @@ use DBI;
 use Data::Dumper;
 
 
-my $dsn = 'DBI:mysql:' .
-          ';mysql_read_default_group=local' .
-          ';mysql_read_default_file=/etc/.mysqloptions';
 
-my $dbh = DBI->connect($dsn, undef, undef, {
-    PrintError => 0,
-    RaiseError => 1
-});
 
 sub new 
 { 
@@ -23,3 +16,14 @@ sub new
     return bless $self, $class; 
 } 
 
+sub DbConnect {
+my $dsn = 'DBI:mysql:' .
+          ';mysql_read_default_group=local' .
+          ';mysql_read_default_file=/etc/.mysqloptions';
+
+my $dbh = DBI->connect($dsn, undef, undef, {
+    PrintError => 0,
+    RaiseError => 1
+});
+return $dbh;
+}

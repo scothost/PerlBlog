@@ -4,15 +4,7 @@ use Data::Dumper;
 use Moose;
 extends 'DedicatedToServers';
 
-my $dsn = 'DBI:mysql:' .
-          ';mysql_read_default_group=local' .
-          ';mysql_read_default_file=/etc/.mysqloptions';
-
-my $dbh = DBI->connect($dsn, undef, undef, {
-    PrintError => 0,
-    RaiseError => 1
-});
-
+my $dbh = DedicatedToServers->DbConnect();
 
 
 sub new {
