@@ -20,8 +20,8 @@
 [% FOREACH cat IN catlist %]
 <tr>
    <td>[% cat.CatName %]</td>
-   <td><a href="./DeleteCategory.pl?cat=[% cat.CatID %]"><img src="../images/delete.png" border="0" width="25"  height="25" ald="Delete"></td>
-    <td><a href="./AddCategory.pl"><img src="../images/add.png" border="0" width="25"  height="25" alt="Add"></td>
+   <td align="center"><a href="./DeleteCategory.pl?cat=[% cat.CatID %]"><img src="../images/delete.png" border="0" width="25"  height="25" ald="Delete"></td>
+    <td align="center"><a href="./AddCategory.pl"><img src="../images/add.png" border="0" width="25"  height="25" alt="Add"></td>
 [% END %]
 
 
