@@ -18,7 +18,7 @@ print "<body>\n";
 
 my $template = Template->new();
 my $Blog = Blog->new();
-my $User = Users->new(); 
+my $User = User->new(); 
 my ($Cats,@arrRtn) = $Blog->GetCategories();
 my $Users = $User->GetUsers();
 my $req = new CGI; 
