@@ -134,8 +134,7 @@ sub DeleteCategory()
     DELETE FROM Categories WHERE CatID = '$cat'
     ");
     $sth->execute() or die $DBI::errstr;
-    print "Record deleted";
-     print "Record deleted <a href='./DeleteCategory.pl'>Click to refresh</a>";
+    print "<script>location.href='./ViewCategories.pl' </script>";
     $sth->finish();
 }
 sub DeletePost()
