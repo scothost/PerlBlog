@@ -2,7 +2,7 @@ package Blog;
 use DBI;
 use Data::Dumper;
 use Moose;
-extends 'Blog';
+extends 'DedicatedToServers';
 
 my $dbh = DedicatedToServers->DbConnect();
 
