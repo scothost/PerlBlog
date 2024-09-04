@@ -112,7 +112,7 @@ sub AddNewCategory {
 "
     );
     $sth->execute() or die $DBI::errstr;
-    print "Record Added";
+    print "<script>location.href='./ViewCategories.pl' </script>";
     $sth->finish();
 }
 
