@@ -33,7 +33,8 @@ my $SubmittedForm = $cgi->param('AddPost');
 my $template = Template->new({
     INCLUDE_PATH => '/var/www/html/MyBlog/perl/admin/views',
     });
- 
+
+my $d2s = DedicatedToServers->new(); 
 my $Blog = Blog->new(); 
 my $User = User->new();
 my $Post = Post->new();
