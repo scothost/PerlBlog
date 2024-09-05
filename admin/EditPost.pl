@@ -51,7 +51,7 @@ my $ActivePost = $req->param("post");
 
 
 if ($req->param('Update') eq 'Update') {
-    $Post = $Post->GetPost($ActivePost);
+    $Post = $Posts->GetPost($ActivePost);
 
    my $vars = {
    admin => $Cats,
