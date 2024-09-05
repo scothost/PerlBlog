@@ -83,7 +83,7 @@ sub AddPost() {
     )
     ");
     $sth->execute() or die $DBI::errstr;
-    print "Record added <a href='./AddPost.pl'>Click to refresh</a>";
+    print "<script>location.href='./ViewPosts.pl' </script>";
     $sth->finish();    
 }
 sub UpdatePost() {
@@ -97,7 +97,7 @@ sub UpdatePost() {
 
     my $sth = $dbh->prepare($sql);
     $sth->execute() or die $DBI::errstr;
-    print "Record updated <a href='./EditPost.pl'>Click to refresh</a>";
+    print "<script>location.href='./ViewPosts.pl' </script>";
     $sth->finish();
 }
 
