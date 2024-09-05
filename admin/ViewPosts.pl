@@ -5,6 +5,10 @@ use warnings;
 use Template;
 use CGI;
 use DedicatedToServers;
+use Blog;
+use User;
+use Post;
+use Category;
 use Data::Dumper;
 use CGI::Carp; # send errors to the browser, not to the logfile
 use CGI;

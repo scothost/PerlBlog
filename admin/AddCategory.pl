@@ -6,6 +6,10 @@ use Template;
 use Scalar::MoreUtils qw(empty);
 use CGI;
 use DedicatedToServers;
+use Blog;
+use User;
+use Post;
+use Category;
 use Data::Dumper;
 use CGI::Carp; # send errors to the browser, not to the logfile
 use CGI;
@@ -28,8 +32,9 @@ my $template = Template->new({
     INCLUDE_PATH => '/var/www/html/MyBlog/perl/admin/views',
     });
 my $d2s = DedicatedToServers->new(); 
+my $User = User->new();
 my $Cats = $d2s->GetCAdminItems();
-my $Users = $d2s->GetUsers();
+my $Users = $User->GetUsers();
 my $req = new CGI; 
 
 
@@ -39,7 +44,7 @@ users => $Users,
 };
 
 if (!empty($CatName)) {
- $d2s->AddNewCategory($content,$CatName,$CatLink);
+ $Category->AddNewCategory($content,$CatName,$CatLink);
 }
 
 

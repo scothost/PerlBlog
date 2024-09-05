@@ -4,6 +4,10 @@ use strict;
 use warnings;
 use Template;
 use DedicatedToServers;
+use Blog;
+use User;
+use Post;
+use Category;
 use Data::Dumper;
 
 print "Content-type:text/html\n\n";

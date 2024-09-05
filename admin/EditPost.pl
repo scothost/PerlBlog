@@ -5,6 +5,10 @@ use warnings;
 use Template;
 use CGI;
 use DedicatedToServers;
+use Blog;
+use User;
+use Post;
+use Category;
 use Data::Dumper;
 use CGI::Carp; # send errors to the browser, not to the logfile
 use CGI;
@@ -44,7 +48,7 @@ my $ActivePost = $req->param("post");
 
 
 if ($req->param('Update') eq 'Update') {
-    $Post = $d2s->GetPost($ActivePost);
+    $Post = $Post->GetPost($ActivePost);
 
    my $vars = {
    admin => $Cats,
@@ -67,13 +71,13 @@ if ($req->param('Update') eq 'Update') {
         cat     => $PostCat,
         id      => $PostID,
     };
-    $d2s->UpdatePost($vars);
+    $Post->UpdatePost($vars);
     
 }
 
 if ($SubmittedForm eq "Submit")
 {
-  $Post = $d2s->GetPost($ActivePost);
+  $Post = $Post->GetPost($ActivePost);
 
   my $vars = {
    admin => $Cats,

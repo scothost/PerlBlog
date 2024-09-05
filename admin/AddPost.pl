@@ -5,6 +5,10 @@ use warnings;
 use Template;
 use CGI;
 use DedicatedToServers;
+use Blog;
+use User;
+use Post;
+use Category;
 use Scalar::MoreUtils qw(empty);
 use Data::Dumper;
 use CGI::Carp; # send errors to the browser, not to the logfile
@@ -34,9 +38,11 @@ my $template = Template->new({
     INCLUDE_PATH => '/var/www/html/MyBlog/perl/admin/views',
     });
 my $d2s = DedicatedToServers->new(); 
-my $CatList = $d2s->GetCategories();
+my $Category = Category->new();
+my $User = User->new();
+my $CatList = $Category->GetCategories();
 my $Cats = $d2s->GetCAdminItems();
-my $Users = $d2s->GetUsers();
+my $Users = $User->GetUsers();
 my $req = new CGI; 
 
 if (empty($SubmittedForm) )
@@ -44,7 +50,7 @@ if (empty($SubmittedForm) )
    
 }
 elsif ( $SubmittedForm eq "Submit") {
- $d2s->AddPost($CatID, $Title,$Summary,$Content);
+ $Post->AddPost($CatID, $Title,$Summary,$Content);
 }
 
 my $vars = {
