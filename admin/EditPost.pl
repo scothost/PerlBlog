@@ -38,7 +38,7 @@ my $template = Template->new({
     });
 my $d2s = DedicatedToServers->new(); 
 my $User = User->new();
-my $Post = Post->new();
+my $Posts = Post->new();
 my $Category = Category->new();
 my $CatList = $Category->GetCategories();
 my $PostList = $Post->GetAllPosts();
@@ -80,7 +80,7 @@ if ($req->param('Update') eq 'Update') {
 
 if ($SubmittedForm eq "Submit")
 {
-  $Post = $Post->GetPost($ActivePost);
+  $Post = $Posts->GetPost($ActivePost);
 
   my $vars = {
    admin => $Cats,
