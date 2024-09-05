@@ -74,7 +74,7 @@ if ($req->param('Update') eq 'Update') {
         cat     => $PostCat,
         id      => $PostID,
     };
-    $Post->UpdatePost($vars);
+    $Posts->UpdatePost($vars);
     
 }
 
