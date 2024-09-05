@@ -33,6 +33,7 @@ my $template = Template->new({
     });
 my $d2s = DedicatedToServers->new(); 
 my $User = User->new();
+my $Category = Category->new();
 my $Cats = $d2s->GetCAdminItems();
 my $Users = $User->GetUsers();
 my $req = new CGI; 
