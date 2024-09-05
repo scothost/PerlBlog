@@ -5,6 +5,10 @@ use warnings;
 use Template;
 use CGI;
 use DedicatedToServers;
+use Blog;
+use User;
+use Post;
+use Category;
 use Data::Dumper;
 use CGI::Carp; # send errors to the browser, not to the logfile
 use CGI;
@@ -29,11 +33,15 @@ my $SubmittedForm = $cgi->param('AddPost');
 my $template = Template->new({
     INCLUDE_PATH => '/var/www/html/MyBlog/perl/admin/views',
     });
-my $d2s = DedicatedToServers->new(); 
-my $CatList = $d2s->GetCategories();
-my $PostList = $d2s->GetAllPosts();
+ 
+my $Blog = Blog->new(); 
+my $User = User->new();
+my $Post = Post->new();
+my $Category = Category->new();
+my $CatList = $Categoriy->GetCategories();
+my $PostList = $Post->GetAllPosts();
 my $Cats = $d2s->GetCAdminItems();
-my $Users = $d2s->GetUsers();
+my $Users = $User->GetUsers();
 my $req = new CGI;
 
 my $vars = {
