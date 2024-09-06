@@ -2,7 +2,7 @@ package Post;
 use DBI;
 use Data::Dumper;
 use Moose;
-extends 'DedicatedToServers';
+extends 'Blog';
 
 my $dbh = DedicatedToServers->DbConnect();
 
@@ -10,7 +10,7 @@ my $dbh = DedicatedToServers->DbConnect();
 sub new {
     my $class = shift;
     my $self = $class->SUPER::new; # attrs inherited from Blog
-    $self->{extended} = 1;
+    $self->{extended} = 0;
     return $self;
 }
 
