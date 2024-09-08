@@ -12,7 +12,7 @@ has dbh => (
   }
 );
 
-#my $dbh = DedicatedToServers->DbConnect();
+my $dbh = DbConnect();
 
 
 sub new {
