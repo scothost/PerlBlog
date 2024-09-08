@@ -1,4 +1,5 @@
 package Blog;
+# Base class specific to the Blog application, defines methods we don't design in its children
 use DBI;
 use Data::Dumper;
 use Moose;
