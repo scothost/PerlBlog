@@ -3,8 +3,6 @@
 use strict;
 use warnings;
 use Template;
-use DedicatedToServers;
-use Blog;
 use Post;
 use Category;
 use Data::Dumper;
@@ -16,14 +14,13 @@ print "<link rel='stylesheet' type='text/css' href='css/style.css' version=01>";
 print "</head>\n\n";
 print "<body>\n";
 
-my $template = Template->new();
-my $Blog = Blog->new();  
+my $template = Template->new(); 
 my $Posts = Post->new();
 my $Category = Category->new();
 my $Cats = $Category->GetCategories();
-my $Content = $Blog->GetIndex();
+my $Content = $Posts->GetIndex();
 my $Top3    = $Posts->GetTop3Posts();
-my $WhoAmI  = $Blog->WhoAmI();
+my $WhoAmI  = $Posts->WhoAmI();
 
 my $vars = {
     categories => $Cats,
