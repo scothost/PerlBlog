@@ -36,10 +36,9 @@ sub GetCategories {
     $sth->execute() or die $DBI::errstr;
     my $results = $sth->fetchall_arrayref({});
       
-
+$sth->finish();
 return($results);
 
-$sth->finish();
 }
 
 1;

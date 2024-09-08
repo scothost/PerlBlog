@@ -9,7 +9,7 @@ our $dbh = DedicatedToServers->DbConnect();
 
 sub new {
     my $class = shift;
-    my $self = $class->SUPER::new; # attrs inherited from Employee
+    my $self = $class->SUPER::new; # attrs inherited from DedicatedToervers
     $self->{extended} = 1;
     return $self;
 }
@@ -23,8 +23,9 @@ sub GetIndex() {
     );
     $sth->execute() or die $DBI::errstr;
     my $results = $sth->fetchall_arrayref({});
-    return($results);
     $sth->finish();
+    return($results);
+ 
 }
 
 sub WhoAmI() {

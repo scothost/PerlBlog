@@ -24,6 +24,7 @@ my $dbh = DBI->connect($dsn, undef, undef, {
     PrintError => 0,
     RaiseError => 1
 });
+$sth->finish();
 return $dbh;
 }
 
