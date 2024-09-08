@@ -4,8 +4,6 @@ use strict;
 use warnings;
 use Template;
 use CGI;
-use DedicatedToServers;
-use Blog;
 use User;
 use Post;
 use Category;
@@ -19,7 +17,6 @@ print "</head>\n\n";
 print "<body>\n";
 
 my $template = Template->new();
-my $Blog = Blog->new(); 
 my $User = User->new();
 my $Post = Post->new();
 my $Category = Category->new();
@@ -29,7 +26,7 @@ my $req = new CGI;
 my $ActiveCategory = $req->param("id");
 my $Posts = $Post->GetPostsByCategory($ActiveCategory);
 my $Top3    = $Post->GetTop3Posts();
-my $WhoAmI  = $Blog->WhoAmI();
+my $WhoAmI  = $Post->WhoAmI();
 
 
 
