@@ -3,8 +3,6 @@
 use strict;
 use warnings;
 use Template;
-use DedicatedToServers;
-use Blog;
 use User;
 use Post;
 use Category;
