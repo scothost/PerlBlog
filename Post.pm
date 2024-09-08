@@ -2,9 +2,9 @@ package Post;
 use DBI;
 use Data::Dumper;
 use Moose;
-extends 'DedicatedToServers';
+extends 'Blog';
 
-my $dbh = DedicatedToServers->DbConnect();
+my $dbh = Blog->DbConnect();
 
 
 sub new {
