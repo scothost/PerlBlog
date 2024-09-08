@@ -19,8 +19,8 @@ print "<body>\n";
 my $template = Template->new({
     INCLUDE_PATH => '/var/www/html/MyBlog/perl/admin/views',
     });
-my $d2s = DedicatedToServers->new(); 
-my $Cats = $d2s->GetCAdminItems();
+my $Posts = Post->new(); 
+my $Cats = $Posts->GetCAdminItems();
 
 
 my $vars = {
