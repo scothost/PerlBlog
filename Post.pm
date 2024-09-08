@@ -8,7 +8,9 @@ has blog => (
   isa => 'Blog',
   required => 1
 );
-my $dbh = Blog->DbConnect();
+
+my $Blog = Blog->new();
+my $dbh = $Blog->DbConnect();
 
 
 
