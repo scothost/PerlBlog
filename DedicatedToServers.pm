@@ -1,6 +1,6 @@
 #!/usr/bin/perl 
 package DedicatedToServers;
-
+# base class for various applications. Blog, eShop and so on
 use strict;
 use warnings;
 use DBI;
@@ -28,6 +28,7 @@ my $dbh = DBI->connect($dsn, undef, undef, {
 return $dbh;
 }
 
+#Returns category links for the admin section
 sub GetCAdminItems()
 {
     my $sth = $dbh->prepare("
@@ -39,4 +40,5 @@ sub GetCAdminItems()
     return($results);        
 }
 
+# Return true
 1;
