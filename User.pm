@@ -8,7 +8,7 @@ has blog => (
   isa => 'Blog',
   required => 1
 );
-my $dbh = DedicatedToServers->DbConnect();
+#my $dbh = DedicatedToServers->DbConnect();
 
 
 sub new {
