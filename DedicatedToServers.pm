@@ -1,5 +1,6 @@
 #!/usr/bin/perl 
 package DedicatedToServers;
+#make it a role
 use Moose::Role;
 use strict;
 use warnings;
