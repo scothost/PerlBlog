@@ -2,14 +2,15 @@ package Blog;
 use DBI;
 use Data::Dumper;
 use Moose;
-extends 'DedicatetToServers';
+extends 'DedicatedToServers';
 
 my $dbh = DedicatedToServers->DbConnect();
 
 
 sub new {
     my $class = shift;
-
+    my $self = $class->SUPER::new; # attrs inherited from Employee
+    $self->{extended} = 1;
     return $self;
 }
 
