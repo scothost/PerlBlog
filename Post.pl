@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use Template;
 use CGI;
-#use DedicatedToServers;
 use Blog;
 use User;
 use Post;
@@ -29,7 +28,7 @@ my $req = new CGI;
 my $ActivePost = $req->param("pid");
 my $Post = $Posts->GetPost($ActivePost);
 my $Top3    = $Posts->GetTop3Posts();
-my $WhoAmI  = $Blog->WhoAmI();
+my $WhoAmI  = $Posts->WhoAmI();
 
 
 
