@@ -2,9 +2,13 @@ package User;
 use DBI;
 use Data::Dumper;
 use Moose;
-extends 'DedicatedToServers';
 
-my $dbh = DedicatedToServers->DbConnect();
+has blog => (
+  is => 'ro',
+  isa => 'Blog',
+  required => 1
+);
+#my $dbh = DedicatedToServers->DbConnect();
 
 
 sub new {

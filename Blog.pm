@@ -2,9 +2,17 @@ package Blog;
 use DBI;
 use Data::Dumper;
 use Moose;
-extends 'DedicatedToServers';
 
-my $dbh = DedicatedToServers->DbConnect();
+with 'DedicatedToServers';
+
+has dbh => (
+  is => 'ro',
+  default => sub {
+    return $_[0]->DbConnect();
+  }
+);
+
+#my $dbh = DedicatedToServers->DbConnect();
 
 
 sub new {
