@@ -17,8 +17,7 @@ my $dbh = DbConnect();
 
 sub new {
     my $class = shift;
-    my $self = $class->SUPER::new; # attrs inherited from Employee
-    $self->{extended} = 1;
+
     return $self;
 }
 
