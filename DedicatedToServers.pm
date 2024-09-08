@@ -1,10 +1,10 @@
 #!/usr/bin/perl 
 package DedicatedToServers;
-
+use Moose::Role;
 use strict;
 use warnings;
 use DBI;
-use Data::Dumper;
+use Data::Dumper; 
 
 sub new 
 { 
