@@ -3,21 +3,14 @@ use DBI;
 use Data::Dumper;
 use Moose;
 extends 'Blog';
-has blog => (
-  is => 'ro',
-  isa => 'Blog',
-  required => 1
-);
 
-my $Blog = Blog->new();
-my $dbh = $Blog->DbConnect();
-
+my $dbh = DedicatedToServers->DbConnect();
 
 
 sub new {
     my $class = shift;
     my $self = $class->SUPER::new; # attrs inherited from Blog
-    $self->{extended} = 0;
+    $self->{extended} = 1;
     return $self;
 }
 
