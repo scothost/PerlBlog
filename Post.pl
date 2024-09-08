@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Template;
 use CGI;
-use DedicatedToServers;
+#use DedicatedToServers;
 use Blog;
 use User;
 use Post;
