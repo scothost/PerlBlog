@@ -4,7 +4,7 @@ use Data::Dumper;
 use Moose;
 extends 'DedicatedToServers';
 
-#my $dbh = DedicatedToServers->DbConnect();
+our $dbh = DedicatedToServers->DbConnect();
 
 
 sub new {

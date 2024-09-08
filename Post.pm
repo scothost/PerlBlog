@@ -4,7 +4,7 @@ use Data::Dumper;
 use Moose;
 extends 'Blog';
 
-my $dbh = Blog->DbConnect();
+#my $dbh = Blog->DbConnect();
 
 
 sub new {
