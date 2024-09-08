@@ -4,8 +4,6 @@ use strict;
 use warnings;
 use Template;
 use CGI;
-use DedicatedToServers;
-use Blog;
 use User;
 use Post;
 use Category;
@@ -42,7 +40,7 @@ my $Posts = Post->new();
 my $Category = Category->new();
 my $CatList = $Category->GetCategories();
 my $PostList = $Posts->GetAllPosts();
-my $Cats = $d2s->GetCAdminItems();
+my $Cats = $Posts->GetCAdminItems();
 my $Users = $User->GetUsers();
 my $req = new CGI;
 

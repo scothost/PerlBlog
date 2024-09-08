@@ -5,8 +5,6 @@ use warnings;
 use Template;
 use Scalar::MoreUtils qw(empty);
 use CGI;
-use DedicatedToServers;
-use Blog;
 use User;
 use Post;
 use Category;
@@ -15,7 +13,6 @@ use CGI::Carp; # send errors to the browser, not to the logfile
 use CGI;
 
 my $cgi = CGI->new(); # create new CGI object
-
 my $PostID =  $cgi->param('post');
 
 
@@ -31,11 +28,11 @@ print "<body>\n";
 my $template = Template->new({
     INCLUDE_PATH => '/var/www/html/MyBlog/perl/admin/views',
     });
-my $d2s = DedicatedToServers->new(); 
+
 my $User = User->new();
 my $Post = Post->new();
 my $PostList = $Post->GetAllPosts();
-my $Cats = $d2s->GetCAdminItems();
+my $Cats = $Post->GetCAdminItems();
 my $Users = $User->GetUsers();
 my $req = new CGI; 
 

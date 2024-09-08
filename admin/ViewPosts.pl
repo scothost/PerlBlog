@@ -4,8 +4,6 @@ use strict;
 use warnings;
 use Template;
 use CGI;
-use DedicatedToServers;
-use Blog;
 use User;
 use Post;
 use Category;
@@ -33,14 +31,13 @@ my $SubmittedForm = $cgi->param('AddPost');
 my $template = Template->new({
     INCLUDE_PATH => '/var/www/html/MyBlog/perl/admin/views',
     });
-my $d2s = DedicatedToServers->new(); 
 my $Blog = Blog->new(); 
 my $User = User->new();
 my $Post = Post->new();
 my $Category = Category->new();
 my $CatList = $Category->GetCategories();
 my $PostList = $Post->GetAllPosts();
-my $Cats = $d2s->GetCAdminItems();
+my $Cats = $Post->GetCAdminItems();
 my $Users = $User->GetUsers();
 my $req = new CGI;
 

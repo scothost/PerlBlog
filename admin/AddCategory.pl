@@ -5,8 +5,6 @@ use warnings;
 use Template;
 use Scalar::MoreUtils qw(empty);
 use CGI;
-use DedicatedToServers;
-use Blog;
 use User;
 use Post;
 use Category;
@@ -34,7 +32,7 @@ my $template = Template->new({
 my $d2s = DedicatedToServers->new(); 
 my $User = User->new();
 my $Category = Category->new();
-my $Cats = $d2s->GetCAdminItems();
+my $Cats = $User->GetCAdminItems();
 my $Users = $User->GetUsers();
 my $req = new CGI; 
 

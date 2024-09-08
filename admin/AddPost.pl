@@ -37,12 +37,12 @@ my $SubmittedForm = $cgi->param('AddPost');
 my $template = Template->new({
     INCLUDE_PATH => '/var/www/html/MyBlog/perl/admin/views',
     });
-my $d2s = DedicatedToServers->new(); 
+
 my $Category = Category->new();
 my $User = User->new();
 my $Post = Post->new();
 my $CatList = $Category->GetCategories();
-my $Cats = $d2s->GetCAdminItems();
+my $Cats = $User->GetCAdminItems();
 my $Users = $User->GetUsers();
 my $req = new CGI; 
 
